@@ -17,9 +17,37 @@ while True:
         fname = f
         break
 
+a = t.Task(fname)
+print(f"\nSuccessfully opened {fname} file and loaded all tasks\n")
+print('type "help" for opening help menu')
+
 while True:
-    ## Implement help menu
-    ## Implement using json module
-    f1 = open(fname, "r+")
-    print(f"\nSuccessfully opened {fname} file and loaded all tasks\n")
-    break
+    uinput = input().lower()
+    if uinput == "exit":
+        print("Exited the program successfully!")
+        break
+    elif uinput == "list":
+        ## Implement list
+        pass
+    elif uinput == "add":
+        u1 = input()
+        a.add_task(u1)
+    elif uinput == "update":
+        while True:
+            u1 = input()
+            if not u1.isnumeric():
+                print("Please give a valid id!")
+                continue
+            else:
+                break
+        u1 = int(u1)
+        u2 = input()
+        a.update_task(u1, u2)
+    elif uinput == "delete":
+        u2 = int(input())
+        a.delete_task(u2)
+    elif uinput == "help":
+        ## Implement help menu
+        pass
+    else:
+        print("Please give a valid user input!")
