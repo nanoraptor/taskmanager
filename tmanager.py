@@ -18,10 +18,8 @@ while True:
         break
 
 while True:
+    ## Implement help menu
+    ## Implement using json module
     f1 = open(fname, "r+")
     print(f"\nSuccessfully opened {fname} file and loaded all tasks\n")
     break
-
-# user input will be given like this ./tmanager.py <options> --optional <string>
-# options can be add, update, list(done | todo | in-progress), mark(-in-progress | -done),
-a = t.Task("a")
