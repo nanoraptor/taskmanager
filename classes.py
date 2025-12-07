@@ -44,7 +44,7 @@ class Task:
             if self.task[i][0] == pid:
                 self.task.pop(i)
                 break
-        self.idl.remove(self.id)
+        self.idl.remove(pid)
         with open(self.path, "w") as file:
             ttk = self.task[:]
             for i in range(len(ttk)):

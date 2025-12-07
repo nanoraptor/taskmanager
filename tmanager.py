@@ -7,7 +7,7 @@ print("Please input the location of your *.json file that contains your tasks\n"
 
 fname = ""
 while True:
-    f = input().strip()
+    f = input(">> ").strip()
     # f = "test.json"
     if not (os.path.exists(f)):
         print("Please enter a valid file path")
@@ -23,49 +23,52 @@ print(f"\nSuccessfully opened file: {fname} and loaded all tasks\n")
 print('type "help" for opening help menu\n')
 
 while True:
-    uinput = input().lower()
+    uinput = input("> ").lower()
     if uinput == "exit":
         print("Exited the program successfully!")
         break
     elif uinput == "list":
         ## Implement list
         l = a.list_task()
-        print("All the tasks in the given file:")
+        print("\nAll the tasks in the given file:")
         for i in l:
-            print(f"ID: {i[0]}, Task: {i[1]}\n")
+            print(f"ID: {i[0]}, Task: {i[1]}")
+        print()
     elif uinput == "add":
-        u1 = input()
+        u1 = input(">> ")
         a.add_task(u1)
+        print("Task added successfully\n")
     elif uinput == "update":
         u1 = ""
         while True:
-            u1 = input()
-            if (not u1.isnumeric()) and (not a.is_id(u1)):
-                print("Please give a valid id!\n")
-                continue
-            else:
+            u1 = input(">> ")
+            if u1.isnumeric() and a.is_id(int(u1)):
                 break
+            else:
+                print("Please give a valid id\n")
         u1 = int(u1)
-        u2 = input()
+        u2 = input(">>> ")
         a.update_task(u1, u2)
+        print("Task updated successfully\n")
     elif uinput == "delete":
         u1 = ""
         while True:
-            u1 = input()
-            if (not u1.isnumeric()) and (not a.is_id(u1)):
-                print("Please give a valid id!\n")
-                continue
-            else:
+            u1 = input(">> (ID) ")
+            if u1.isnumeric() and a.is_id(int(u1)):
                 break
+            else:
+                print("Please give a valid id\n")
         u1 = int(u1)
         a.delete_task(u1)
+        print("Task deleted successfully\n")
     elif uinput == "help":
         ## Implement help menu
-        print("Help Menu:\n")
-        print("type 'list to list all tasks\n")
-        print("type 'add' to to add tasks\n")
-        print("type 'update' to add tasks\n")
-        print("type 'delete' to delete tasks\n")
+        print("\nHelp Menu:")
+        print("type 'list' to list all tasks")
+        print("type 'add' to to add tasks")
+        print("type 'update' to add tasks")
+        print("type 'delete' to delete tasks")
+        print("type 'exit' to exit the program")
         print("type 'help' to open this help menu\n")
     else:
         print("Please give a valid user input!\n")
