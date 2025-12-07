@@ -15,10 +15,11 @@ A simple and fast CLI based Task tracker that will convert and organize your tas
 
 <p>
   <p>You can see the usage by typing 'help'</p>
-  <p>To add a task: go into add mode and type the name of the task</p>
-  <p>To delete a task: go into delete mode and enter the id of the task</p>
-  <p>To update a task: go into update mode and enter the id of the task followed by the updated task name</p>
-  <p>To list a task: go into list mode</p>
+  <p>You can go into a mode by typing name of the mode</p>
+  <p>To add a task: go into 'add' mode and type the name of the task</p>
+  <p>To delete a task: go into 'delete' mode and enter the id of the task</p>
+  <p>To update a task: go into 'update' mode and enter the id of the task followed by the updated task name</p>
+  <p>To list a task: go into 'list' mode</p>
 </p>
 
 #### <b>Storage Format:</b>
