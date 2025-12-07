@@ -29,5 +29,5 @@ A simple and fast CLI based Task tracker that will convert and organize your tas
 <p>It stores the tasks in the preferred .json file.
 </p>
 <p>Each task is assigned with a unique id</p>
-<p>Each line in the .json file contains: "unique_id _ task_name"</p>
+<p>Each line in the .json file contains: "uniqueid _ taskname"</p>
 <p>** Note that each line ends with a newline character</p>
